@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hxd.camera.system">
+
+    <!--写入SD卡的权限：如果你希望保存相机拍照后的照片-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--读取SD卡的权限:打开相册选取图片所必须的权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- authorities ：值一般是"项目的包名 + .provider"。当我们使用FileProvider的getUriForFile方法时参数需和 清单文件注册时的保持一致。-->
+        <!--exported ：是否对外开放，除非是对第三方提供服务，否则一般为false。-->
+        <!--grantUriPermissions ：是否授予临时权限，设置为true。-->
+        <!--resource: 标签里面是用来指定共享的路径。就是我们的共享路径配置的xml文件，可以自己命名。该文件放在res/xml文件夹下，若没有xml文件夹，自己创建一个。-->
+    </application>
+
+
+</manifest>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/rg_sel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_one"
+            style="@style/RbStyle"
+            android:checked="true"
+            android:text="@string/one" />
+
+        <RadioButton
+            android:id="@+id/rb_two"
+            style="@style/RbStyle"
+            android:text="@string/two" />
+
+        <RadioButton
+            android:id="@+id/rb_three"
+            style="@style/RbStyle"
+            android:text="@string/three" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/iv_one"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@drawable/shape_kua"
+        android:contentDescription="@string/app_name"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_two"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_sel"
+        tools:src="@mipmap/no_p" />
+
+    <ImageView
+        android:id="@+id/iv_two"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@drawable/shape_kua"
+        android:contentDescription="@string/app_name"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_sel"
+        tools:src="@mipmap/camera" />
+
+    <ImageView
+        android:id="@+id/iv_three"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@drawable/shape_kua"
+        android:contentDescription="@string/app_name"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_two"
+        tools:src="@mipmap/album" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
